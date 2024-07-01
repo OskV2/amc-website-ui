@@ -33,7 +33,7 @@ const SocialMedia: React.FC = () => {
         <h2 className="text-6xl">Sprawdź naszego instagrama</h2>
         <Image src={instagramIcon} alt="Instagram icon" height={20} width={20} />
       </div>
-      <div className="grid grid-cols-3 gap-2">
+      <div className="grid grid-cols-3 gap-3">
         {posts.map((post: InstagramPostType) => (
           <InstagramPost key={post.id} postData={post} />
         ))}
