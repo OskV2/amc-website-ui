@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 const RootLayout = ({children}: Readonly<{ children: React.ReactNode}>) => {
   return (
-    <html lang="en">
+    <html className="scroll-smooth scroll-m-8" lang="en">
       <body className={poppins.className}>
         <Navbar />
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
+        <main className="flex min-h-screen flex-col items-center justify-between">
           {children}
         </main>
         <Footer />

@@ -1,3 +1,4 @@
+"use client"
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Contact from "@/components/Contact";
@@ -11,12 +12,12 @@ const Home = () => {
   return (
     <>
       <About />
-      <Services />
-      <Contact />
-      <Location />
-      <Restoration />
-      <BeforeAndAfter />
+      {/* <Services /> */}
+      {/* <Restoration /> */}
+      {/* <BeforeAndAfter /> */}
       <SocialMedia />
+      {/* <Location /> */}
+      {/* <Contact /> */}
     </>
   );
 };
