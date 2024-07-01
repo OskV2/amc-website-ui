@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@googlemaps/markerclusterer": "^2.5.3",
+    "@headlessui/react": "^2.1.1",
     "@reduxjs/toolkit": "^2.2.1",
     "@vis.gl/react-google-maps": "^1.1.0",
     "next": "14.2.4",
