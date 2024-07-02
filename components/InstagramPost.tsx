@@ -19,6 +19,12 @@ type InstagramPostProps = {
   postData: InstagramPostType;
 };
 
+  /* 
+  * TODO:
+  * - add on hover effect - show text "open in new tab"
+  * 
+  */
+
 const InstagramPost: React.FC<InstagramPostProps> = ({ postData }) => {
   const [hoverActive, setHoverActive] = useState<boolean>(false)
 

@@ -4,6 +4,12 @@ import { H1 } from "./ui/Typography";
 
 import MercedesBackground from "../public/r107.jpg";
 
+/*
+* TODO: 
+* - add animation for number when reloading the page (probably with framer motion)
+*
+*/
+
 const About = () => {
   return (
     <section className="relative w-full pt-96 pb-60" id="about">
