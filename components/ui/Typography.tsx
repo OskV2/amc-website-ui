@@ -4,11 +4,11 @@ type TypographyProps = {
 }
 
 export const H1 = ({className, children}: TypographyProps) => {
-  return <h1 className={`text-5xl font-extrabold ` + className}>{children}</h1>;
+  return <h1 className={`text-5xl font-extrabold leading-normal ` + className}>{children}</h1>;
 };
 
 export const H2 = ({className, children}: TypographyProps) => {
-  return <h2 className={`text-4xl font-bold ` + className}>{children}</h2>;
+  return <h2 className={`text-4xl font-bold leading-normal ` + className}>{children}</h2>;
 };
 
 export const H3 = ({className, children}: TypographyProps) => {

@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { fetchInstagramPosts } from "../utils/instagram";
+import { H2 } from "./ui/Typography";
 import InstagramPost from "./InstagramPost";
 
-import instagramIcon from '../public/instagram.svg'
+import instagramIcon from "../public/Instagram_color.svg";
 
 type InstagramPostType = {
   id: string;
@@ -14,6 +16,11 @@ type InstagramPostType = {
   thumbnail_url: string;
   timestamp: Date;
 };
+
+/*
+ * TODO:
+ * - add href to link to instagram account
+ */
 
 const SocialMedia: React.FC = () => {
   const [posts, setPosts] = useState<InstagramPostType[]>([]);
@@ -28,11 +35,26 @@ const SocialMedia: React.FC = () => {
   }, []);
 
   return (
-    <section className="container" id="social">
-      <div className="flex">
-        <h2 className="text-6xl">Sprawdź naszego instagrama</h2>
-        <Image src={instagramIcon} alt="Instagram icon" height={20} width={20} />
-      </div>
+    <section className="container mb-12" id="social">
+      <H2 className="flex">
+        Sprawdź naszego
+        <span>&nbsp;</span>
+        <Link
+          href=""
+          className="flex gap-5 bg-white hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-transparent bg-clip-text font-bold"
+        >
+          instagrama
+          <Image
+            src={instagramIcon}
+            alt="Instagram icon"
+            height={40}
+            width={40}
+          />
+        </Link>
+      </H2>
+      <p className="text-white/50 my-4">
+        Bądź na biezaco / zobacz nasze realizacje czy cos takiego cn
+      </p>
       <div className="grid grid-cols-3 gap-3">
         {posts.map((post: InstagramPostType) => (
           <InstagramPost key={post.id} postData={post} />

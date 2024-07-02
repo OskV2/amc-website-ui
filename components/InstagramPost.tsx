@@ -27,15 +27,23 @@ type InstagramPostProps = {
 
 const InstagramPost: React.FC<InstagramPostProps> = ({ postData }) => {
   const [hoverActive, setHoverActive] = useState<boolean>(false)
+  let caption: string 
 
-  const caption = postData.caption.split("#")[0];
 
-  const onMouseOver = (e: React.MouseEvent<HTMLVideoElement>) => {
+  if (postData.caption.includes('#')) {
+    caption = postData.caption.split("#")[0]
+  } else {
+    caption = postData.caption
+  }
+
+  
+
+  const onMouseOver = (e: React.MouseEvent<HTMLVideoElement> | any) => {
     e.target.play()
     setHoverActive(true)
   }
 
-  const onMouseOut = (e: React.MouseEvent<HTMLVideoElement>) => {
+  const onMouseOut = (e: React.MouseEvent<HTMLVideoElement> | any) => {
     e.target.pause()
     setHoverActive(false)
   }
