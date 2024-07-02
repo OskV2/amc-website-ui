@@ -20,9 +20,7 @@ const Navbar = () => {
         <Link href="/">
           <Image src={Logo} alt="AMC Logo" width={150} />
         </Link>
-
         <div className="flex gap-12">
-          <Link className={linkClasses} href="#about">About</Link>
           <Link className={linkClasses} href="">Services</Link>
           <Link className={linkClasses} href="">Contact</Link>
           <Link className={linkClasses} href="">Location</Link>
