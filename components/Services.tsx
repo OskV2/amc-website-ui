@@ -1,6 +1,7 @@
 import React from "react";
 import Service from "./Service";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import { H2 } from "../components/ui/Typography";
 
 import playIcon from "../public/play.svg";
@@ -70,6 +71,13 @@ const services = [
   },
 ];
 
+
+/*
+* TODO:
+* - add href to link to contact section
+*/
+
+
 const Services = () => {
   return (
     <section className="container my-12" id="services">
@@ -77,7 +85,7 @@ const Services = () => {
         <H2>Sprawdź nasze usługi</H2>
         <Image src={screwdriverAndWrenchIcon} alt={`Screwdriver and wrench icon`} width={40} height={40}/>
       </div>
-      <div className=" grid grid-cols-6 gap-3 mb-6">
+      <div className=" grid grid-cols-6 gap-3 mb-8">
         {services.map((service: ServiceType) => (
           <Service
             key={service.id}
@@ -87,8 +95,8 @@ const Services = () => {
           />
         ))}
       </div>
-      <p className="text-white/50">Jeżeli poszukiwana przez ciebie usługa nie została wymieniona w żadnej z powyższych kategorii skontaktuj się z nami.</p>
-      <p className="text-white/50">Ceny poszczególnych usług ustalane są indywidualnie.</p>
+      <p className="text-white/50">Jeżeli poszukiwana przez Ciebie usługa nie została wymieniona w żadnej z powyższych kategorii <Link className="text-white hover:text-amber-100" href="">skontaktuj się z nami.</Link></p>
+      <p className="text-white/50">Ceny poszczególnych usług ustalane są indywidualnie w zależności od złożoności problemu.</p>
     </section>
   );
 };
