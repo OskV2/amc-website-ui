@@ -12,6 +12,7 @@ const Navbar = () => {
   * TODO:
   * - hiding header when scrolling down and showing when scrolling up
   * - burger for s/xs devices or even bigger
+  * - add anchors
   */
 
   return (

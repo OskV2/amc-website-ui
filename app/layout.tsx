@@ -15,6 +15,12 @@ export const metadata: Metadata = {
   description: "AMC - Auto Moto Centrum Zielona Góra",
 };
 
+/*
+* TODO:
+* - change favicon
+* - work on SEO
+*/
+
 const RootLayout = ({children}: Readonly<{ children: React.ReactNode}>) => {
   return (
     <html className="scroll-smooth scroll-m-8" lang="en">
