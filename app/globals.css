@@ -8,21 +8,6 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-/*
-  Optional background colors:
-    rgb(25, 28, 32); 
-    rgb(15, 15, 15); 
-    rgb(30, 31, 34);
-
-    rgb(202, 175, 107) golden
-    rgba(202, 175, 107, 0.2) golden - 0.2
-
-    rgb(254, 243, 199) amber-100
-    rgb(253, 230, 138) amber-200
-    rgb(251, 191, 36) amber-400
-    
-*/
-
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -48,3 +33,35 @@ body {
     text-wrap: balance;
   }
 }
+
+/* 
+* Styling for SVG hover effect that cannot be added directly to element like all tailwind styles
+* This hover effect is used in Service.tsx component
+*/
+.service-icon {
+  transition: fill 0.2s ease-in-out;
+  fill: white;
+}
+
+.service-icon:hover {
+  /* fill: rgb(254, 243, 199); /* Tailwind color amber-100 */
+  /* fill: rgb(253, 230, 138); /* Tailwind color amber-100 */
+  fill: rgb(252, 211, 77); /* Tailwind color amber-100 */
+  /*fill: rgb(251, 191, 36); /* Tailwind color amber-400 */
+}
+
+/*
+  Optional background colors:
+    rgb(25, 28, 32); 
+    rgb(15, 15, 15); 
+    rgb(30, 31, 34);
+
+    rgb(202, 175, 107) golden
+    rgba(202, 175, 107, 0.2) golden - 0.2
+
+    rgb(254, 243, 199) amber-100
+    rgb(253, 230, 138) amber-200
+    rgb(252 211 77)    amber-300
+    rgb(251, 191, 36)  amber-400
+    
+*/

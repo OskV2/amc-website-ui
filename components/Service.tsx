@@ -1,19 +1,20 @@
-import { useState } from "react";
-import Image, { StaticImageData } from "next/image";
+import { ReactElement, useState } from "react";
+import Image from "next/image";
 
 import chevronRight from "../public/chevron_right.svg";
-import Modal from "../components/ui/Modal"
+import Modal from "./ui/Modal"
+import EngineIcon2 from "../public/engine.svg"
 
 type ServiceProps = {
-  image: StaticImageData;
+  image: ReactElement;
   name: string;
   modalContent: { title: string; description: string };
 };
 
 /*
 * TODO: 
-* - add hover effect (change color) on svg icon - normally it should be white and amber-100 on hover
-* https://codesandbox.io/s/svg-hover-change-color-t2l3b?file=/src/App.js
+* - svg images should be thiccer
+* - fix other images that are broken because of the new changes with SVG images
 */
 
 const Service = ({ image, name, modalContent }: ServiceProps) => {
@@ -28,12 +29,17 @@ const Service = ({ image, name, modalContent }: ServiceProps) => {
     setIsModalOpen(false);
   };
 
+  console.log(EngineIcon2)
+  console.log(image)
+
   return (
     <>
       <div className="cursor-pointer" onClick={handleClick}>
         <div className="bg-neutral-800 aspect-square p-8 rounded-lg">
           <div className="bg-amber-200/25 p-5 rounded-lg">
-            <Image className="aspect-square" src={image} alt="Icon" />
+            {/* <Image className="aspect-square service-icon" src={image} alt="Icon" /> */}
+            {image}
+            {/* <EngineIcon2 /> */}
           </div>
         </div>
         <div className="flex justify-between items-center pl-3">

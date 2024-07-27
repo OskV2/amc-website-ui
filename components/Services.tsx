@@ -1,23 +1,31 @@
-import React from "react";
+import React, { ReactElement } from "react";
 import Service from "./Service";
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import Link from "next/link";
 import { H2 } from "../components/ui/Typography";
 
-import playIcon from "../public/play.svg";
 import screwdriverAndWrenchIcon from "../public/screwdriver-wrench.svg";
+import EngineIcon from "../public/engine.svg";
+import BrakesIcon from "../public/brakes.svg";
+import ExhaustIcon from "../public/exhaust.svg";
+import SuspensionIcon from "../public/suspension.svg";
+import BatteryIcon from "../public/battery.svg";
+import OilIcon from "../public/oil.svg";
+
 
 type ServiceType = {
   id: number;
-  image: StaticImageData;
+  image: ReactElement;
   name: string;
   modalContent: { title: string; description: string };
 };
 
-const services = [
+const serviceIconClasses: string = "service-icon aspect-square"
+
+const services: ServiceType[] = [
   {
     id: 1,
-    image: playIcon,
+    image: <EngineIcon className={serviceIconClasses} />,
     name: "Układ napędowy",
     modalContent: {
       title: "Title some service 1",
@@ -26,7 +34,7 @@ const services = [
   },
   {
     id: 2,
-    image: playIcon,
+    image: <BrakesIcon className={serviceIconClasses} />,
     name: "Hamulce",
     modalContent: {
       title: "Title some service 2",
@@ -35,7 +43,7 @@ const services = [
   },
   {
     id: 3,
-    image: playIcon,
+    image: <ExhaustIcon className={serviceIconClasses} />,
     name: "Układy wydechowe",
     modalContent: {
       title: "Title some service 3",
@@ -44,7 +52,7 @@ const services = [
   },
   {
     id: 4,
-    image: playIcon,
+    image: <SuspensionIcon className={serviceIconClasses} />,
     name: "Zawieszenie",
     modalContent: {
       title: "Title some service 4",
@@ -53,7 +61,7 @@ const services = [
   },
   {
     id: 5,
-    image: playIcon,
+    image: <BatteryIcon className={serviceIconClasses} />,
     name: "Układ elektryczny",
     modalContent: {
       title: "Title some service 5",
@@ -62,7 +70,7 @@ const services = [
   },
   {
     id: 6,
-    image: playIcon,
+    image: <OilIcon className={serviceIconClasses} />,
     name: "Diagnostyka",
     modalContent: {
       title: "Title some service 6",
