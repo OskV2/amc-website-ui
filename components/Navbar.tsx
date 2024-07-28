@@ -13,14 +13,13 @@ const Navbar = () => {
   * - hiding header when scrolling down and showing when scrolling up
   * - burger for s/xs devices or even bigger
   * - add anchors
-  * - fix the LOGO that is crashing whole app because of SVG changes for Services section
   */
 
   return (
     <header className="fixed w-full px-24 py-6 z-10">
       <nav className="container flex justify-between items-center">
         <Link href="/">
-          {/* <Image src={Logo} alt="AMC Logo" width={150} /> */}
+          <Logo className="w-40" />
         </Link>
         <div className="flex gap-12">
           <Link className={linkClasses} href="">Services</Link>

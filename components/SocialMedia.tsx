@@ -5,7 +5,7 @@ import { fetchInstagramPosts } from "../utils/instagram";
 import { H2 } from "./ui/Typography";
 import InstagramPost from "./InstagramPost";
 
-import instagramIcon from "../public/Instagram_color.svg";
+import InstagramIcon from "../public/Instagram_color.svg";
 
 type InstagramPostType = {
   id: string;
@@ -20,6 +20,7 @@ type InstagramPostType = {
 /*
  * TODO:
  * - add href to link to instagram account
+ * - add 0.2s color transition when hovering over "instragram" 
  */
 
 const SocialMedia: React.FC = () => {
@@ -41,15 +42,10 @@ const SocialMedia: React.FC = () => {
         <span>&nbsp;</span>
         <Link
           href=""
-          className="flex gap-5 bg-white hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-transparent bg-clip-text font-bold"
+          className="flex items-center gap-5 bg-white hover:bg-gradient-to-r from-[#833ab4] via-[#fd1d1d] to-[#fcb045] text-transparent bg-clip-text font-bold"
         >
           instagrama
-          <Image
-            src={instagramIcon}
-            alt="Instagram icon"
-            height={40}
-            width={40}
-          />
+          <InstagramIcon className="w-10 h-10" />
         </Link>
       </H2>
       <p className="text-white/50 my-4">

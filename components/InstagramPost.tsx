@@ -2,8 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState } from "react";
 
-import pauseIcon from "../public/pause.svg"
-import playIcon from "../public/play.svg"
+import PauseIcon from "../public/pause.svg"
+import PlayIcon from "../public/play.svg"
 
 type InstagramPostType = {
   id: string;
@@ -27,16 +27,14 @@ type InstagramPostProps = {
 
 const InstagramPost: React.FC<InstagramPostProps> = ({ postData }) => {
   const [hoverActive, setHoverActive] = useState<boolean>(false)
+  const iconClasses: string = "absolute z-10 mt-6 ml-6 w-8 h-8"
   let caption: string 
-
 
   if (postData.caption.includes('#')) {
     caption = postData.caption.split("#")[0]
   } else {
     caption = postData.caption
   }
-
-  
 
   const onMouseOver = (e: React.MouseEvent<HTMLVideoElement> | any) => {
     e.target.play()
@@ -69,7 +67,8 @@ const InstagramPost: React.FC<InstagramPostProps> = ({ postData }) => {
           )}
           {postData.media_type === "VIDEO" && (
             <div className="inline-block size-full bg-black">
-              <Image className="absolute z-10 mt-6 ml-6" src={hoverActive ? playIcon : pauseIcon} alt={`${hoverActive} + icon`} height={20} width={20} />
+              {/* <Image className="absolute z-10 mt-6 ml-6" src={hoverActive ? playIcon : pauseIcon} alt={`${hoverActive} + icon`} height={20} width={20} /> */}
+              { hoverActive ? <PlayIcon className={iconClasses} /> : <PauseIcon className={iconClasses} /> }
               <video
                 className="absolute inset-y-0 my-auto"
                 src={postData.media_url}

@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { H2 } from "../components/ui/Typography";
 
-import screwdriverAndWrenchIcon from "../public/screwdriver-wrench.svg";
+import ScrewdriverAndWrenchIcon from "../public/screwdriver-wrench.svg";
 import EngineIcon from "../public/engine.svg";
 import BrakesIcon from "../public/brakes.svg";
 import ExhaustIcon from "../public/exhaust.svg";
@@ -89,9 +89,9 @@ const services: ServiceType[] = [
 const Services = () => {
   return (
     <section className="container my-12" id="services">
-      <div className="flex mb-5 gap-5">
+      <div className="flex mb-5 gap-5 items-center">
         <H2>Sprawdź nasze usługi</H2>
-        <Image src={screwdriverAndWrenchIcon} alt={`Screwdriver and wrench icon`} width={40} height={40}/>
+        <ScrewdriverAndWrenchIcon className="w-10 h-10"/>
       </div>
       <div className=" grid grid-cols-6 gap-3 mb-8">
         {services.map((service: ServiceType) => (

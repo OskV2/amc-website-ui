@@ -1,7 +1,7 @@
 import { ReactElement, useState } from "react";
 import Image from "next/image";
 
-import chevronRight from "../public/chevron_right.svg";
+import ChevronRight from "../public/chevron_right.svg";
 import Modal from "./ui/Modal"
 import EngineIcon2 from "../public/engine.svg"
 
@@ -14,7 +14,6 @@ type ServiceProps = {
 /*
 * TODO: 
 * - svg images should be thiccer
-* - fix other images that are broken because of the new changes with SVG images
 */
 
 const Service = ({ image, name, modalContent }: ServiceProps) => {
@@ -45,7 +44,8 @@ const Service = ({ image, name, modalContent }: ServiceProps) => {
         <div className="flex justify-between items-center pl-3">
           <p>{name}</p>
           <button className="flex justify-center items-center rounded-br-lg bg-amber-100 w-9 h-9">
-            <Image src={chevronRight} alt="" width={12} height={18} />
+            {/* <Image src={chevronRight} alt="" width={12} height={18} /> */}
+            <ChevronRight className="w3 h-5" />
           </button>
         </div>
       </div>
