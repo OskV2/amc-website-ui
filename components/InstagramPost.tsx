@@ -22,7 +22,7 @@ type InstagramPostProps = {
   /* 
   * TODO:
   * - add on hover effect - show text "open in new tab"
-  * 
+  * - add loading effect for time when posts are being fetched (animate-pulse class in tailwind)
   */
 
 const InstagramPost: React.FC<InstagramPostProps> = ({ postData }) => {

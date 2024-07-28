@@ -12,7 +12,6 @@ const Navbar = () => {
   * TODO:
   * - hiding header when scrolling down and showing when scrolling up
   * - burger for s/xs devices or even bigger
-  * - add anchors
   */
 
   return (
@@ -22,11 +21,10 @@ const Navbar = () => {
           <Logo className="w-40" />
         </Link>
         <div className="flex gap-12">
-          <Link className={linkClasses} href="">Services</Link>
-          <Link className={linkClasses} href="">Contact</Link>
-          <Link className={linkClasses} href="">Location</Link>
-          <Link className={linkClasses} href="">Restoration</Link>
-          <Link className={linkClasses} href="">Social Media</Link>
+          <Link className={linkClasses} href="#services">Usługi</Link>
+          <Link className={linkClasses} href="#restoration">Renowacje</Link>
+          <Link className={linkClasses} href="#social">Social Media</Link>
+          <Link className={linkClasses} href="#contact">Kontakt</Link>
         </div>
       </nav>
     </header>

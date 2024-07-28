@@ -21,8 +21,7 @@ const modalContent = {
 const Restoration = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    console.log(event);
+  const handleClick = () => {
     setIsModalOpen(true);
   };
 

@@ -12,7 +12,7 @@ const Contact = () => {
   const informationClasses: string = "flex items-center gap-3 mb-4";
 
   return (
-    <section className="container mb-12 flex gap-3" id="location">
+    <section className="container mb-12 flex gap-3" id="contact">
       <div className="w-1/3">
         <H2 className="mb-4">Skontaktuj się z nami!</H2>
         <div className={informationClasses}>
