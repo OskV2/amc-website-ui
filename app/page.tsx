@@ -14,8 +14,7 @@ const Home = () => {
       <Services />
       <Restoration />
       <SocialMedia />
-      {/* <Location /> */}
-      {/* <Contact /> */}
+      <Contact />
     </>
   );
 };
