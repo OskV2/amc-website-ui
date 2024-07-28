@@ -1,14 +1,9 @@
 import React from "react";
 import Background from "./ui/Background";
 import { H1 } from "./ui/Typography";
+import Counter from "./ui/Counter";
 
 import MercedesBackground from "../public/r107.jpg";
-
-/*
-* TODO: 
-* - add animation for number when reloading the page (probably with framer motion)
-*
-*/
 
 const About = () => {
   return (
@@ -21,7 +16,9 @@ const About = () => {
       <div className="container flex items-start content-center">
         <H1 className="w-6/12 text-left text-wrap">
           AUTO MOTO CENTRUM<br/>
-          <span className="text-7xl text-amber-100">25 </span> LAT NA RYNKU
+          <span className="text-7xl text-amber-100">
+            <Counter from={0} to={25} /> 
+          </span> LAT NA RYNKU
         </H1>
       </div>
     </section>
