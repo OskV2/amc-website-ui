@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
-import { fetchInstagramPosts } from "../utils/instagram";
+import { fetchInstagramPosts } from "../utils/http";
 import { H2 } from "./ui/Typography";
-import InstagramPost from "./InstagramPost";
+import { useQuery } from "@tanstack/react-query";
+
+import SinglePost from "./instagram/SinglePost";
+import SinglePostLoading from "./instagram/SinglePostLoading";
+import SinglePostError from "./instagram/SinglePostError";
 
 import InstagramIcon from "../public/Instagram_color.svg";
 
@@ -20,20 +23,42 @@ type InstagramPostType = {
 /*
  * TODO:
  * - add href to link to instagram account
- * - add 0.2s color transition when hovering over "instragram" 
+ * - add 0.2s color transition when hovering over "instragram"
  */
 
 const SocialMedia: React.FC = () => {
-  const [posts, setPosts] = useState<InstagramPostType[]>([]);
+  let content;
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await fetchInstagramPosts();
-      setPosts(data);
-    };
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["instagramPosts"],
+    queryFn: fetchInstagramPosts,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    retry: 1,
+    retryDelay: 3000
+  });
 
-    fetchPosts();
-  }, []);
+  if (isLoading) {
+    content = (
+      Array.from({ length: 3 }).map((_, index) => (
+        <SinglePostLoading />
+      ))
+    )
+  }
+
+  if (isError) {
+    content = <SinglePostError />;
+  }
+
+  if (data) {
+    content = (
+      <>
+        {data.map((post: InstagramPostType) => (
+          <SinglePost key={post.id} postData={post} />
+        ))}
+      </>
+    );
+  }
 
   return (
     <section className="container mb-12" id="social">
@@ -51,11 +76,7 @@ const SocialMedia: React.FC = () => {
       <p className="text-white/50 my-4">
         Bądź na biezaco / zobacz nasze realizacje czy cos takiego cn
       </p>
-      <div className="grid grid-cols-3 gap-3">
-        {posts.map((post: InstagramPostType) => (
-          <InstagramPost key={post.id} postData={post} />
-        ))}
-      </div>
+      <div className="grid grid-cols-3 gap-3">{content}</div>
     </section>
   );
 };
