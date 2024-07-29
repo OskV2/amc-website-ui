@@ -17,6 +17,7 @@ const Background = ({ className, src, alt, darkOverlay }: BackgroundProps) => {
         className={`absolute bottom-0 w-full h-unset object-cover -z-20` + (className ? ' ' + className : '')}
         src={src}
         alt={alt}
+        priority={true}
       />
     </>
   );

@@ -28,17 +28,12 @@ const Service = ({ image, name, modalContent }: ServiceProps) => {
     setIsModalOpen(false);
   };
 
-  console.log(EngineIcon2)
-  console.log(image)
-
   return (
     <>
       <div className="cursor-pointer" onClick={handleClick}>
         <div className="bg-neutral-800 aspect-square p-8 rounded-lg">
           <div className="bg-amber-200/25 p-5 rounded-lg">
-            {/* <Image className="aspect-square service-icon" src={image} alt="Icon" /> */}
             {image}
-            {/* <EngineIcon2 /> */}
           </div>
         </div>
         <div className="flex justify-between items-center pl-3">
