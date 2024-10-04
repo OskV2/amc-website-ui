@@ -13,6 +13,18 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      transitionDuration: {
+        '400': '400ms',
+      },
+      keyframes: {
+        gradient: {
+          '0%': { 'background-position': '0% 50%' },
+          '100%': { 'background-position': '100% 50%' },
+        },
+      },
+      animation: {
+        'gradient-move': 'gradient 2s ease infinite',
+      },
       size: {
         '128': '32rem',
         '144': '36rem',

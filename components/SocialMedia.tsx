@@ -3,6 +3,7 @@ import Link from "next/link";
 import { fetchInstagramPosts } from "../utils/http";
 import { H2 } from "./ui/Typography";
 import { useQuery } from "@tanstack/react-query";
+import { TypeAnimation } from "react-type-animation";
 
 import SinglePost from "./instagram/SinglePost";
 import SinglePostLoading from "./instagram/SinglePostLoading";
@@ -34,15 +35,13 @@ const SocialMedia: React.FC = () => {
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
     retry: 1,
-    retryDelay: 3000
+    retryDelay: 3000,
   });
 
   if (isLoading) {
-    content = (
-      Array.from({ length: 3 }).map((_, index) => (
-        <SinglePostLoading />
-      ))
-    )
+    content = Array.from({ length: 3 }).map((_, index) => (
+      <SinglePostLoading />
+    ));
   }
 
   if (isError) {
@@ -50,10 +49,23 @@ const SocialMedia: React.FC = () => {
       <>
         <SinglePostError />
         <div className="flex justify-center items-center col-span-2">
-          <p className="text-white/50 my-4">Wystąpił błąd. Nie udało się załadować postów.</p>
+          <TypeAnimation
+            sequence={[
+              "Wystąpił błąd. Nie udało się załadować postów.",
+              3000,
+              ":(",
+              3000,
+              "Spróbój ponownie później.",
+              3000,
+            ]}
+            wrapper="span"
+            speed={50}
+            className="text-white/50 my-4"
+            repeat={Infinity}
+          />
         </div>
       </>
-    )
+    );
   }
 
   if (data) {
