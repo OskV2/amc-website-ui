@@ -6,6 +6,11 @@ import EnvelopeIcon from "../public/envelope.svg";
 import ClockIcon from "../public/clock.svg";
 import LocationIcon from "../public/location.svg";
 
+/*
+* TODO:
+* - add linking to phone, mail and location
+*/
+
 const Contact = () => {
   const iconClasses: string = "w-5 h-5";
   const textClasses: string = "text-white/50";
