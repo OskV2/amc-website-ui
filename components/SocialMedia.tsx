@@ -23,7 +23,6 @@ type InstagramPostType = {
 /*
  * TODO:
  * - add href to link to instagram account
- * - add 0.2s color transition when hovering over "instragram"
  */
 
 const SocialMedia: React.FC = () => {
@@ -47,7 +46,14 @@ const SocialMedia: React.FC = () => {
   }
 
   if (isError) {
-    content = <SinglePostError />;
+    content = (
+      <>
+        <SinglePostError />
+        <div className="flex justify-center items-center col-span-2">
+          <p className="text-white/50 my-4">Wystąpił błąd. Nie udało się załadować postów.</p>
+        </div>
+      </>
+    )
   }
 
   if (data) {
