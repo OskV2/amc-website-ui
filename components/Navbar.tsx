@@ -10,7 +10,7 @@ import CloseIcon from "../public/close.svg";
 const Navbar = () => {
   const [show, setShow] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
 
   const linkClasses: string = "text-neutral-300 hover:text-amber-100";
   const iconClasses: string = "w-10 h-10";
@@ -25,6 +25,10 @@ const Navbar = () => {
     setLastScrollY(window.scrollY);
   };
 
+  const handleLinkClick = () => {
+    setIsOpen(false); // Close the nav
+  };
+
   useEffect(() => {
     window.addEventListener("scroll", controlNavbar);
     return () => {
@@ -32,9 +36,13 @@ const Navbar = () => {
     };
   }, [lastScrollY]);
 
-  const handleLinkClick = () => {
-    setIsOpen(false); // Close the nav
-  };
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("overflow-hidden");  // Disable scrolling
+    } else {
+      document.body.classList.remove("overflow-hidden");  // Enable scrolling
+    }
+  }, [isOpen]);
 
   const links = (
     <>
