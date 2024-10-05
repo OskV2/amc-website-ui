@@ -29,7 +29,7 @@ type InstagramPostType = {
 const SocialMedia: React.FC = () => {
   let content;
 
-  const { data, isLoading, isError, error } = useQuery({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["instagramPosts"],
     queryFn: fetchInstagramPosts,
     refetchOnWindowFocus: false,
@@ -48,22 +48,21 @@ const SocialMedia: React.FC = () => {
     content = (
       <>
         <SinglePostError />
-        <div className="flex justify-center items-center col-span-2">
-          <TypeAnimation
-            sequence={[
-              "Wystąpił błąd. Nie udało się załadować postów.",
-              3000,
-              ":(",
-              3000,
-              "Spróbój ponownie później.",
-              3000,
-            ]}
-            wrapper="span"
-            speed={50}
-            className="text-white/50 my-4"
-            repeat={Infinity}
-          />
-        </div>
+
+        <TypeAnimation
+          sequence={[
+            "Wystąpił błąd. Nie udało się załadować postów.",
+            3000,
+            ":(",
+            3000,
+            "Spróbój ponownie później.",
+            3000,
+          ]}
+          wrapper="span"
+          speed={50}
+          className="text-white/50 my-4 w-full md:w-2/3 flex justify-center items-center"
+          repeat={Infinity}
+        />
       </>
     );
   }
@@ -79,8 +78,8 @@ const SocialMedia: React.FC = () => {
   }
 
   return (
-    <section className="container mb-12" id="social">
-      <H2 className="flex">
+    <section className="container mb-12 px-12 sm:px-0" id="social">
+      {/* <H2 className="flex">
         Sprawdź naszego
         <span>&nbsp;</span>
         <Link
@@ -90,11 +89,20 @@ const SocialMedia: React.FC = () => {
           instagrama
           <InstagramIcon className="w-10 h-10" />
         </Link>
-      </H2>
+      </H2> */}
       <p className="text-white/50 my-4">
         Bądź na biezaco / zobacz nasze realizacje czy cos takiego cn
       </p>
-      <div className="grid grid-cols-3 gap-3">{content}</div>
+      {!isError && (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-0 sm:px-24 md:px-0">
+          {content}
+        </div>
+      )}
+      {isError && (
+        <div className="flex flex-col md:flex-row gap-3 px-0 sm:px-24 md:px-0">
+          {content}
+        </div>
+      )}
     </section>
   );
 };

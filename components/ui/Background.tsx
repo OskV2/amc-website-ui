@@ -14,7 +14,10 @@ const Background = ({ className, src, alt, darkOverlay }: BackgroundProps) => {
         <div className="absolute bottom-0 size-full bg-black/50 -z-10" />
       )}
       <Image
-        className={`absolute bottom-0 w-full h-unset object-cover -z-20` + (className ? ' ' + className : '')}
+        className={
+          `absolute inset-0 w-screen h-full object-cover -z-20` +
+          (className ? " " + className : "")
+        }
         src={src}
         alt={alt}
         priority={true}

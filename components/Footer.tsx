@@ -6,8 +6,8 @@ import GithubIcon from "../public/github.png";
 
 const Footer = () => {
   return (
-    <footer className="px-24 py-6">
-      <div className="container flex flex-col items-end">
+    <footer className="px-0 lg:px-24 py-6">
+      <div className="container flex flex-col items-center lg:items-end">
         <p className="text-white/50 mb-2">Page designed and developed by:</p>
         <Link
           className="flex justify-end items-center"

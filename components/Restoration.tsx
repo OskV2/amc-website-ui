@@ -30,7 +30,7 @@ const Restoration = () => {
   };
   return (
     <>
-      <section className="container mb-12" id="restoration">
+      <section className="container mb-12 px-12 sm:px-0" id="restoration">
         <H2>Renowacja pojazdów</H2>
         <p className="text-white/50 my-4">
           Warsztat wykonuje usługi związane z renowacją pojazdów zabytkowych.{" "}

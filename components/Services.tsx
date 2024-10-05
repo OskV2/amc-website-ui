@@ -88,12 +88,14 @@ const services: ServiceType[] = [
 
 const Services = () => {
   return (
-    <section className="container my-12" id="services">
-      <div className="flex mb-5 gap-5 items-center">
-        <H2>Sprawdź nasze usługi</H2>
-        <ScrewdriverAndWrenchIcon className="w-10 h-10"/>
-      </div>
-      <div className=" grid grid-cols-6 gap-3 mb-8">
+    <section className="container my-12 px-12 sm:px-0" id="services">
+
+        <H2 className="flex mb-5 gap-5 items-center">
+          Sprawdź nasze usługi
+          <ScrewdriverAndWrenchIcon className="w-10 h-10"/>
+        </H2>
+        
+      <div className=" grid grid-cols-1 min-[520px]:grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 mb-8">
         {services.map((service: ServiceType) => (
           <Service
             key={service.id}

@@ -8,7 +8,7 @@ const SinglePostError = () => {
 
   return (
     <>
-      <div className="aspect-square overflow-hidden relative">
+      <div className="aspect-square overflow-hidden relative w-full md:w-1/3">
         <div className="inline-block size-full bg-gray-100/25">
           <ExclamationIcon className={iconClasses} />
 

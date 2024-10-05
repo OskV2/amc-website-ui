@@ -17,8 +17,8 @@ const Contact = () => {
   const informationClasses: string = "flex items-center gap-3 mb-4";
 
   return (
-    <section className="container mb-12 flex gap-3" id="contact">
-      <div className="w-1/3">
+    <section className="container mb-12 flex flex-col lg:flex-row gap-3 px-12 sm:px-0" id="contact">
+      <div className="w-full lg:w-1/3">
         <H2 className="mb-4">Skontaktuj się z nami!</H2>
         <div className={informationClasses}>
           <PhoneIcon className={iconClasses} />
@@ -37,7 +37,7 @@ const Contact = () => {
           <p className={textClasses}>ul. Jodłowa 2, 65-120 Zielona Góra</p>
         </div>
       </div>
-      <div className="w-2/3 h-80">
+      <div className="w-full lg:w-2/3 h-80">
         <iframe
           className="w-full h-full"
           src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d9586.661096370737!2d15.524713710663777!3d51.9654928169755!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x470613a52b25bd5b%3A0x6847a5a2e07c7340!2sAuto-Moto!5e0!3m2!1spl!2spl!4v1718874737222!5m2!1spl!2spl"
