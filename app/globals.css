@@ -49,13 +49,20 @@ body {
   fill: rgb(252, 211, 77); /* Tailwind color amber-100 */
   /*fill: rgb(251, 191, 36); /* Tailwind color amber-400 */
 }
-
+/*
+* Added transition for collapse component
+* This component is used only by menu on mobile devices
+*/
 .ReactCollapse--collapse {
   transition: height 500ms;
 }
 
 .ReactCollapse--content {
   height: 100vh;
+}
+
+.splide__track--nav>.splide__list>.splide__slide.is-active {
+  border: 1px solid rgb(254, 243, 199) !important;
 }
 
 /*
@@ -73,3 +80,14 @@ body {
     rgb(251, 191, 36)  amber-400
     
 */
+
+
+/*
+* Added max height for before & after component from library
+* Added this because library is fucked and doesnt give me oportunity to style it inline with tailwind
+* Like bruh, each image should be separate component like its made in splidejs so i can style it as i want
+* Adding it as prop is such a fucked approach
+*/
+.before-after-slider__first-photo-container img, .before-after-slider__second-photo-container img {
+  max-height: 536px;
+}
