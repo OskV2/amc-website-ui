@@ -9,8 +9,8 @@ export const fetchInstagramPosts = async () => {
   const response = await fetch(URL + `${INSTAGRAM_ACCESS_TOKEN}`);
 
   if (!response.ok) {
-    throw new Error('Failed to fetch Instagram posts');
-  }
+      throw new Error('Failed to fetch Instagram posts');
+    }
 
   const data = await response.json();
   return data.data.slice(0,6);

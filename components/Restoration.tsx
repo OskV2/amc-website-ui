@@ -1,21 +1,40 @@
 import { useState } from "react";
 import { H2 } from "./ui/Typography";
-import Modal from "./ui/Modal"
-import ReactBeforeSliderComponent from "react-before-after-slider-component";
-import "react-before-after-slider-component/dist/build.css";
+import Modal from "./ui/Modal";
+import BeforeAfter from "./ui/BeforeAfter";
+import Gallery from "./ui/Gallery";
 
-const FIRST_IMAGE = {
-  imageUrl:
-    "https://smeleshkin.github.io/react-before-after-slider-component//assets/image1.jpg",
-};
-const SECOND_IMAGE = {
-  imageUrl:
-    "https://smeleshkin.github.io/react-before-after-slider-component//assets/image2.jpg",
-};
+const Audi_Before = {
+  imageUrl: "/audi_after.jpg",
+}
+const Audi_After = {
+  imageUrl: "/audi_side.jpg"
+}
+
+const Audi_Before_43 = {
+  imageUrl: "/audi_after_43.jpg",
+}
+const Audi_After_43 = {
+  imageUrl: "/audi_side_43.jpg"
+}
+
+const images = [
+  "/mercedes-1.jpg",
+  "/mercedes-2.jpg",
+  "/mercedes-3.jpg",
+  "/mercedes-4.jpg",
+  "/mercedes-5.jpg",
+  "/mercedes-6.jpg",
+  "/mercedes-7.jpg",
+  "/mercedes-8.jpg",
+  "/mercedes-9.jpg",
+  "/mercedes-10.jpg",
+];
 
 const modalContent = {
   title: "Renowacja pojazdów zabytkowych",
-  description: "Pan mechanik z pasją zajmuje się renowacją samochodów zabytkowych, przekształcając klasyczne pojazdy w prawdziwe dzieła sztuki. Na razie przeprowadził pełną renowację jednego własnego auta, przywracając mu dawny blask i oryginalny wygląd. Obecnie pracuje nad drugim zabytkowym pojazdem, który jest w trakcie intensywnych prac. Jego doświadczenie i precyzja gwarantują, że każdy szczegół zostanie starannie odtworzony, co sprawia, że jego renowacje są wyjątkowe i cenione przez miłośników klasycznych samochodów.",
+  description:
+    "Pan mechanik z pasją zajmuje się renowacją samochodów zabytkowych, przekształcając klasyczne pojazdy w prawdziwe dzieła sztuki. Na razie przeprowadził pełną renowację jednego własnego auta, przywracając mu dawny blask i oryginalny wygląd. Obecnie pracuje nad drugim zabytkowym pojazdem, który jest w trakcie intensywnych prac. Jego doświadczenie i precyzja gwarantują, że każdy szczegół zostanie starannie odtworzony, co sprawia, że jego renowacje są wyjątkowe i cenione przez miłośników klasycznych samochodów.",
 };
 
 const Restoration = () => {
@@ -41,10 +60,18 @@ const Restoration = () => {
             Dowiedz się więcej.
           </span>
         </p>
-        <ReactBeforeSliderComponent
-          firstImage={FIRST_IMAGE}
-          secondImage={SECOND_IMAGE}
-        />
+        <div className="flex flex-col lg:flex-row gap-3">
+          <div className="w-full lg:w-1/2 h-fit">
+            <p>Audi V8 D11</p>
+            <p>Opis do dokończenia</p>
+            <BeforeAfter firstImage={Audi_Before_43} secondImage={Audi_After_43} />
+          </div>
+          <div className="w-full lg:w-1/2 h-fit">
+            <p>Mercedes R107</p>
+            <p>Opis do dokończenia</p>
+            <Gallery images={images} />
+          </div>
+        </div>
       </section>
       {isModalOpen && (
         <Modal
