@@ -4,7 +4,7 @@ import ExclamationIcon from "../../public/exclamation.svg";
 
 const SinglePostError = () => {
 
-  const iconClasses: string = "absolute z-10 top-5 left-5 w-10 h-10";
+  const iconClasses: string = "absolute -z-10 top-5 left-5 w-10 h-10";
 
   return (
     <>

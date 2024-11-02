@@ -19,8 +19,7 @@ type ServiceProps = {
 const Service = ({ image, name, modalContent }: ServiceProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
-    console.log(event)
+  const handleClick = () => {
     setIsModalOpen(true);
   };
 

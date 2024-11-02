@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { fetchInstagramPosts } from "../utils/http";
 import { H2 } from "./ui/Typography";
@@ -40,7 +40,7 @@ const SocialMedia: React.FC = () => {
 
   if (isLoading) {
     content = Array.from({ length: 3 }).map((_, index) => (
-      <SinglePostLoading />
+      <SinglePostLoading key={index}/>
     ));
   }
 
@@ -79,7 +79,8 @@ const SocialMedia: React.FC = () => {
 
   return (
     <section className="container mb-12 px-12 sm:px-0" id="social">
-      {/* <H2 className="flex">
+
+      {/* <H2 className="hidden sm:flex">
         Sprawdź naszego
         <span>&nbsp;</span>
         <Link
@@ -89,7 +90,19 @@ const SocialMedia: React.FC = () => {
           instagrama
           <InstagramIcon className="w-10 h-10" />
         </Link>
+      </H2>
+      <H2 className="flex sm:hidden">
+        <Link className="flex" href="">
+          Sprawdź naszego instagrama 
+          <InstagramIcon className="w-10 h-10" />  
+        </Link>  
       </H2> */}
+
+      <H2 className="flex gap-5">
+        Sprawdź naszego instagrama
+        <InstagramIcon className="w-10 h-10" />  
+      </H2>
+
       <p className="text-white/50 my-4">
         Bądź na biezaco / zobacz nasze realizacje czy cos takiego cn
       </p>

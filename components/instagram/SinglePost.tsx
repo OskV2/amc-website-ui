@@ -20,11 +20,6 @@ type InstagramPostProps = {
   postData: InstagramPostType;
 };
 
-/*
- * TODO:
- * - add loading effect for time when posts are being fetched (animate-pulse class in tailwind)
- */
-
 const SinglePost: React.FC<InstagramPostProps> = ({ postData }) => {
   const [hoverActive, setHoverActive] = useState<boolean>(false); //  THIS ONE IS FOR VIDEOS PLAYING ON HOVER
   const [hoverActicve2, setHoverActive2] = useState(false); // THIS ONE IS FOR "openInNewTabBox" SHOWING ON HOVER

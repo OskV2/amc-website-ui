@@ -79,13 +79,6 @@ const services: ServiceType[] = [
   },
 ];
 
-
-/*
-* TODO:
-* - add href to link to contact section
-*/
-
-
 const Services = () => {
   return (
     <section className="container my-12 px-12 sm:px-0" id="services">
@@ -105,7 +98,7 @@ const Services = () => {
           />
         ))}
       </div>
-      <p className="text-white/50">Jeżeli poszukiwana przez Ciebie usługa nie została wymieniona w żadnej z powyższych kategorii <Link className="text-white hover:text-amber-100" href="">skontaktuj się z nami.</Link></p>
+      <p className="text-white/50">Jeżeli poszukiwana przez Ciebie usługa nie została wymieniona w żadnej z powyższych kategorii <Link className="text-white hover:text-amber-100" href="#contact">skontaktuj się z nami.</Link></p>
       <p className="text-white/50">Ceny poszczególnych usług ustalane są indywidualnie w zależności od złożoności problemu.</p>
     </section>
   );
