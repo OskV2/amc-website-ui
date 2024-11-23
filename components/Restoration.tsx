@@ -77,7 +77,8 @@ const Restoration = () => {
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
-          content={modalContent}
+          title={modalContent.title}
+          description={modalContent.description}
         />
       )}
     </>

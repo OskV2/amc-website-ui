@@ -104,7 +104,7 @@ const SocialMedia: React.FC = () => {
       </H2>
 
       <p className="text-white/50 my-4">
-        Bądź na biezaco / zobacz nasze realizacje czy cos takiego cn
+        Bądź na bieżaco i zobacz nasze realizacje.
       </p>
       {!isError && (
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 px-0 sm:px-24 md:px-0">

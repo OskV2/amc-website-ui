@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, ReactNode } from "react";
 import Service from "./Service";
 import Image from "next/image";
 import Link from "next/link";
@@ -17,7 +17,8 @@ type ServiceType = {
   id: number;
   image: ReactElement;
   name: string;
-  modalContent: { title: string; description: string };
+  description?: string
+  jsxContent?: ReactNode;
 };
 
 const serviceIconClasses: string = "service-icon aspect-square"
@@ -27,55 +28,61 @@ const services: ServiceType[] = [
     id: 1,
     image: <EngineIcon className={serviceIconClasses} />,
     name: "Układ napędowy",
-    modalContent: {
-      title: "Title some service 1",
-      description: "Description of some service 1",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
   {
     id: 2,
     image: <BrakesIcon className={serviceIconClasses} />,
     name: "Hamulce",
-    modalContent: {
-      title: "Title some service 2",
-      description: "Description of some service 2",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
   {
     id: 3,
     image: <ExhaustIcon className={serviceIconClasses} />,
     name: "Układy wydechowe",
-    modalContent: {
-      title: "Title some service 3",
-      description: "Description of some service 3",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
   {
     id: 4,
     image: <SuspensionIcon className={serviceIconClasses} />,
     name: "Zawieszenie",
-    modalContent: {
-      title: "Title some service 4",
-      description: "Description of some service 4",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
   {
     id: 5,
     image: <BatteryIcon className={serviceIconClasses} />,
     name: "Układ elektryczny",
-    modalContent: {
-      title: "Title some service 5",
-      description: "Description of some service 5",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
   {
     id: 6,
     image: <OilIcon className={serviceIconClasses} />,
     name: "Diagnostyka",
-    modalContent: {
-      title: "Title some service 6",
-      description: "Description of some service 6",
-    },
+    jsxContent: (
+      <>
+        <p>Układ napędowy:</p>
+      </>
+    )
   },
 ];
 
@@ -94,7 +101,8 @@ const Services = () => {
             key={service.id}
             image={service.image}
             name={service.name}
-            modalContent={service.modalContent}
+            title={service.name}
+            jsxContent={service.jsxContent}
           />
         ))}
       </div>

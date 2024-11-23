@@ -7,11 +7,13 @@ interface CounterProps {
 }
 
 const Counter: React.FC<CounterProps> = ({ from, to }) => {
-    const nodeRef = useRef();
+    const nodeRef = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
       const node = nodeRef.current;
   
+      if (!node) return; // Ensure the node exists before using it
+
       const controls = animate(from, to, {
         duration: 3,
         onUpdate(value) {

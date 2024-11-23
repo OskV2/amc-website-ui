@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import {
   Button,
   Dialog,
@@ -9,10 +10,12 @@ import {
 type ModalProps = {
   isOpen: boolean;
   onClose: () => void;
-  content: { title: string; description: string };
+  title: string; 
+  description?: string;
+  jsxContent?: ReactNode;
 };
 
-const Modal = ({ isOpen, onClose, content }: ModalProps) => {
+const Modal = ({ isOpen, onClose, title, description, jsxContent }: ModalProps) => {
   return (
     <Dialog
       open={isOpen}
@@ -28,11 +31,12 @@ const Modal = ({ isOpen, onClose, content }: ModalProps) => {
             className="w-full max-w-2xl rounded-xl bg-white/15 p-6 backdrop-blur-2xl duration-300 ease-out data-[closed]:transform-[scale(95%)] data-[closed]:opacity-0"
           >
             <DialogTitle as="h3" className="text-base/7 font-medium text-white">
-              {content.title}
+              {title}
             </DialogTitle>
-            <p className="mt-2 text-sm/6 text-white/50">
-              {content.description}
-            </p>
+            {description && <p className="mt-2 text-sm/6 text-white/50">
+              {description}
+            </p>}
+            {jsxContent && jsxContent}
             <div className="mt-4">
               <Button
                 className="inline-flex items-center gap-2 rounded-md bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[focus]:outline-1 data-[focus]:outline-white data-[open]:bg-gray-700"

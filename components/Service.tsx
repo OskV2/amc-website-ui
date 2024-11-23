@@ -1,4 +1,4 @@
-import { ReactElement, useState } from "react";
+import { ReactElement, useState, ReactNode } from "react";
 import Image from "next/image";
 
 import ChevronRight from "../public/chevron_right.svg";
@@ -8,7 +8,9 @@ import EngineIcon2 from "../public/engine.svg"
 type ServiceProps = {
   image: ReactElement;
   name: string;
-  modalContent: { title: string; description: string };
+  title: string;
+  description?: string
+  jsxContent?: ReactNode;
 };
 
 /*
@@ -16,7 +18,7 @@ type ServiceProps = {
 * - svg images should be thiccer
 */
 
-const Service = ({ image, name, modalContent }: ServiceProps) => {
+const Service = ({ image, name, description, jsxContent }: ServiceProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {
@@ -47,7 +49,9 @@ const Service = ({ image, name, modalContent }: ServiceProps) => {
         <Modal
           isOpen={isModalOpen}
           onClose={closeModal}
-          content={modalContent}
+          title={name}
+          description={description}
+          jsxContent={jsxContent}
         />
       )}
     </>
