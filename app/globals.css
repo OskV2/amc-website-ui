@@ -91,3 +91,25 @@ body {
 .before-after-slider__first-photo-container img, .before-after-slider__second-photo-container img {
   max-height: 536px;
 }
+
+/* Global scrollbar styling for whole website */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}

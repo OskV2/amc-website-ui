@@ -22,6 +22,7 @@ type ServiceType = {
 };
 
 const serviceIconClasses: string = "service-icon aspect-square"
+const listClasses: string = "max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 mb-5"
 
 const services: ServiceType[] = [
   {
@@ -30,27 +31,73 @@ const services: ServiceType[] = [
     name: "Układ napędowy",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Wymiana sprzęgła</li>
+          <li>Naprawa lub wymiana skrzyni biegów</li>
+          <li>Wymiana półosi napędowych</li>
+          <li>Regeneracja lub wymiana wału napędowego</li>
+          <li>Naprawa lub wymiana mostu napędowego</li>
+          <li>Wymiana oleju w skrzyni biegów</li>
+          <li>Wymiana elementów układu różnicowego</li>
+          <li>Naprawa układu przeniesienia napędu</li>
+          <li>Wymiana łożysk w układzie napędowym</li>
+          <li>Wymiana uszczelnień w układzie napędowym</li>
+          <li>Regeneracja mechanicznego układu paliwowego</li>
+        </ul>
+        <p>Usługi związane z silnikiem</p>
+        <ul className={listClasses}>
+          <li>Wymiana silnika</li>
+          <li>Naprawa mechaniczna silnika</li>
+          <li>Regeneracja głowicy silnika</li>
+          <li>Wymiana rozrządu </li>
+          <li>Wymiana uszczelki pod głowicą</li>
+          <li>Wymiana turbo (turbosprężarki) </li>
+          <li>Wymiana układu chłodzenia silnika</li>
+          <li>Naprawa lub wymiana układu wtryskowego</li>
+          <li>Wymiana pasków i łańcuchów napędowych</li>
+          <li>Regeneracja układu zapłonowego</li>
+        </ul>
       </>
     )
   },
   {
     id: 2,
     image: <BrakesIcon className={serviceIconClasses} />,
-    name: "Hamulce",
+    name: "Układ hamulcowy",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Wymiana klocków hamulcowych </li>
+          <li>Wymiana tarcz hamulcowych </li>
+          <li>Wymiana płynu hamulcowego </li>
+          <li>Naprawa zacisków hamulcowych </li>
+          <li>Wymiana przewodów hamulcowych</li>
+          <li>Wymiana bębnów i szczęk hamulcowych </li>
+          <li>Regeneracja systemu ABS </li>
+          <li>Wymiana pompy hamulcowej </li>
+          <li>Wymiana serwa hamulcowego </li>
+        </ul>
       </>
     )
   },
   {
     id: 3,
     image: <ExhaustIcon className={serviceIconClasses} />,
-    name: "Układy wydechowe",
+    name: "Układ wydechowy",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Wymiana tłumika.</li>
+          <li>Wymiana katalizatora.</li>
+          <li>Uszczelnianie układu wydechowego.</li>
+          <li>Spawanie elementów układu wydechowego.</li>
+          <li>Montaż sportowego układu wydechowego.</li>
+          <li>Wymiana lub naprawa kolektora wydechowego.</li>
+          <li>Czyszczenie lub regeneracja filtra cząstek stałych (DPF/FAP).</li>
+          <li>Diagnostyka nieszczelności układu wydechowego.</li>
+          <li>Montaż nowego tłumika końcowego.</li>
+          <li>Usuwanie nadmiernych hałasów i wibracji w układzie wydechowym.</li>
+        </ul>
       </>
     )
   },
@@ -60,7 +107,17 @@ const services: ServiceType[] = [
     name: "Zawieszenie",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Wymiana amortyzatorów</li>
+          <li>Regeneracja amortyzatorów</li>
+          <li>Wymiana sprężyn zawieszenia</li>
+          <li>Naprawa wahaczy</li>
+          <li>Wymiana łożysk kół</li>
+          <li>Wymiana sworzni wahaczy</li>
+          <li>Naprawa tulei zawieszenia</li>
+          <li>Ustawianie geometrii kół (zbieżność)</li>
+          <li>Wymiana drążków kierowniczych i końcówek</li>
+        </ul>
       </>
     )
   },
@@ -70,17 +127,38 @@ const services: ServiceType[] = [
     name: "Układ elektryczny",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Diagnostyka komputerowa</li>
+          <li>Wymiana akumulatora </li>
+          <li>Naprawa alternatora </li>
+          <li>Naprawa rozrusznika </li>
+          <li>Wymiana świec zapłonowych/żarowych </li>
+          <li>Naprawa instalacji elektrycznej</li>
+          <li>Montaż/wymiana czujników</li>
+          <li>Naprawa/wymiana wiązek elektrycznych</li>
+          <li>Wymiana bezpieczników i przekaźników</li>
+          <li>Naprawa oświetlenia </li>
+          <li>Regeneracja/wymiana modułów sterujących </li>
+          <li>Montaż systemów alarmowych i immobilizerów </li>
+          <li>Naprawa centralnego zamka </li>
+          <li>Kalibracja czujników i systemów wspomagających</li>
+          <li>Instalacja dodatkowego wyposażenia elektrycznego</li>
+        </ul>
       </>
     )
   },
   {
     id: 6,
     image: <OilIcon className={serviceIconClasses} />,
-    name: "Diagnostyka",
+    name: "Inne",
     jsxContent: (
       <>
-        <p>Układ napędowy:</p>
+        <ul className={listClasses}>
+          <li>Chip tuning</li>
+          <li>Naprawa liczników</li>
+          <li>Programowanie kluczyków</li>
+          <li>Rozkodowywanie radia</li>
+        </ul>
       </>
     )
   },

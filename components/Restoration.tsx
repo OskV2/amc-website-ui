@@ -34,7 +34,7 @@ const images = [
 const modalContent = {
   title: "Renowacja pojazdów zabytkowych",
   description:
-    "Pan mechanik z pasją zajmuje się renowacją samochodów zabytkowych, przekształcając klasyczne pojazdy w prawdziwe dzieła sztuki. Na razie przeprowadził pełną renowację jednego własnego auta, przywracając mu dawny blask i oryginalny wygląd. Obecnie pracuje nad drugim zabytkowym pojazdem, który jest w trakcie intensywnych prac. Jego doświadczenie i precyzja gwarantują, że każdy szczegół zostanie starannie odtworzony, co sprawia, że jego renowacje są wyjątkowe i cenione przez miłośników klasycznych samochodów.",
+    "Renowacja samochodu to proces przywracania pojazdu do pierwotnego stanu, zarówno pod względem mechanicznym, jak i estetycznym. Rozpoczyna się od dokładnej diagnostyki, podczas której ocenia się stan silnika, układu hamulcowego, zawieszenia i nadwozia. Następnie następuje demontaż elementów, usunięcie rdzy oraz naprawa lub wymiana uszkodzonych podzespołów. Renowacja wnętrza obejmuje odnawianie tapicerki i deski rozdzielczej, co podnosi komfort użytkowania. Ostatecznie nadwozie jest malowane, co nie tylko poprawia jego wygląd, ale także chroni przed czynnikami zewnętrznymi. Po zakończeniu prac przeprowadzane są testy, aby upewnić się, że wszystkie systemy działają prawidłowo. Renowacja samochodu to satysfakcjonujące zajęcie, które przekształca stary pojazd w unikalne dzieło sztuki, łączące klasykę z nowoczesnością.",
 };
 
 const Restoration = () => {
