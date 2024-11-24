@@ -1,4 +1,5 @@
 module.exports = {
+  output: 'export', // Add this to enable static site generation
   images: {
     remotePatterns: [
       {

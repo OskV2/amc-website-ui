@@ -62,13 +62,13 @@ const Restoration = () => {
         </p>
         <div className="flex flex-col lg:flex-row gap-3">
           <div className="w-full lg:w-1/2 h-fit">
-            <p>Audi V8 D11</p>
-            <p>Opis do dokończenia</p>
+            {/* <p>Audi V8 D11</p>
+            <p>Opis do dokończenia</p> */}
             <BeforeAfter firstImage={Audi_Before_43} secondImage={Audi_After_43} />
           </div>
           <div className="w-full lg:w-1/2 h-fit">
-            <p>Mercedes R107</p>
-            <p>Opis do dokończenia</p>
+            {/* <p>Mercedes R107</p>
+            <p>Opis do dokończenia</p> */}
             <Gallery images={images} />
           </div>
         </div>

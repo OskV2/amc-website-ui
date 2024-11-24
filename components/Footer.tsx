@@ -1,8 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import Image from "next/image";
-
-import GithubIcon from "../public/github.png";
 
 const Footer = () => {
   return (
@@ -14,7 +11,7 @@ const Footer = () => {
           href="https://github.com/OskV2"
           target="_blank"
         >
-          <Image src={GithubIcon} alt="Github icon" width={24} height={24} />
+          <img src="/github.png" alt="Github icon" width={24} height={24} />
           <p className="text-white hover:text-amber-100 ml-2.5">github.com/OskV2</p>
         </Link>
       </div>

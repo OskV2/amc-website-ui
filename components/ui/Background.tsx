@@ -1,8 +1,6 @@
-import Image, { StaticImageData } from "next/image";
-
 type BackgroundProps = {
   className?: string | null;
-  src: StaticImageData;
+  src: string;
   alt: string;
   darkOverlay?: boolean | false;
 };
@@ -13,14 +11,13 @@ const Background = ({ className, src, alt, darkOverlay }: BackgroundProps) => {
       {darkOverlay && (
         <div className="absolute bottom-0 size-full bg-black/50 -z-10" />
       )}
-      <Image
+      <img
         className={
           `absolute inset-0 w-screen h-full object-cover -z-20` +
           (className ? " " + className : "")
         }
         src={src}
         alt={alt}
-        priority={true}
       />
     </>
   );

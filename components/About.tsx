@@ -3,13 +3,11 @@ import Background from "./ui/Background";
 import { H1 } from "./ui/Typography";
 import Counter from "./ui/Counter";
 
-import MercedesBackground from "../public/r107.jpg";
-
 const About = () => {
   return (
     <section className="flex items-center relative w-full h-[400px] lg:h-[700px]" id="about">
       <Background
-        src={MercedesBackground}
+        src="/r107.jpg"
         alt={`Mercedes Benz r107 slc as background image`}
         darkOverlay={true}
       />
