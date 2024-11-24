@@ -22,11 +22,11 @@ const Contact = () => {
         <H2 className="mb-4">Skontaktuj się z nami!</H2>
         <div className={informationClasses}>
           <PhoneIcon className={iconClasses} />
-          <p className={textClasses}>605 630 628</p>
+          <p className={textClasses}><a href="tel:+605630628"></a>605 630 628</p>
         </div>
         <div className={informationClasses}>
           <EnvelopeIcon className={iconClasses} />
-          <p className={textClasses}>amczg@biuro.pl</p>
+          <p className={textClasses}><a href="mailto:amczg@biuro.pl"></a>amczg@biuro.pl</p>
         </div>
         <div className={informationClasses}>
           <ClockIcon className={iconClasses} />

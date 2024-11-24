@@ -43,6 +43,7 @@ const services: ServiceType[] = [
           <li>Wymiana łożysk w układzie napędowym</li>
           <li>Wymiana uszczelnień w układzie napędowym</li>
           <li>Regeneracja mechanicznego układu paliwowego</li>
+          <li>Itp.</li>
         </ul>
         <p>Usługi związane z silnikiem</p>
         <ul className={listClasses}>
@@ -56,6 +57,7 @@ const services: ServiceType[] = [
           <li>Naprawa lub wymiana układu wtryskowego</li>
           <li>Wymiana pasków i łańcuchów napędowych</li>
           <li>Regeneracja układu zapłonowego</li>
+          <li>Itp.</li>
         </ul>
       </>
     )
@@ -76,6 +78,7 @@ const services: ServiceType[] = [
           <li>Regeneracja systemu ABS </li>
           <li>Wymiana pompy hamulcowej </li>
           <li>Wymiana serwa hamulcowego </li>
+          <li>Itp.</li>
         </ul>
       </>
     )
@@ -97,6 +100,7 @@ const services: ServiceType[] = [
           <li>Diagnostyka nieszczelności układu wydechowego.</li>
           <li>Montaż nowego tłumika końcowego.</li>
           <li>Usuwanie nadmiernych hałasów i wibracji w układzie wydechowym.</li>
+          <li>Itp.</li>
         </ul>
       </>
     )
@@ -117,6 +121,7 @@ const services: ServiceType[] = [
           <li>Naprawa tulei zawieszenia</li>
           <li>Ustawianie geometrii kół (zbieżność)</li>
           <li>Wymiana drążków kierowniczych i końcówek</li>
+          <li>Itp.</li>
         </ul>
       </>
     )
@@ -143,6 +148,7 @@ const services: ServiceType[] = [
           <li>Naprawa centralnego zamka </li>
           <li>Kalibracja czujników i systemów wspomagających</li>
           <li>Instalacja dodatkowego wyposażenia elektrycznego</li>
+          <li>Itp.</li>
         </ul>
       </>
     )
@@ -158,6 +164,7 @@ const services: ServiceType[] = [
           <li>Naprawa liczników</li>
           <li>Programowanie kluczyków</li>
           <li>Rozkodowywanie radia</li>
+          <li>Itp.</li>
         </ul>
       </>
     )
