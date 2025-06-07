@@ -1,6 +1,6 @@
 import React from "react";
 
-import { H2 } from "../components/ui/Typography";
+import { H2 } from "./ui/Typography";
 import PhoneIcon from "../public/phone.svg";
 import EnvelopeIcon from "../public/envelope.svg";
 import ClockIcon from "../public/clock.svg";
@@ -12,9 +12,9 @@ import LocationIcon from "../public/location.svg";
 */
 
 const Contact = () => {
-  const iconClasses: string = "w-5 h-5";
-  const textClasses: string = "text-white/50";
-  const informationClasses: string = "flex items-center gap-3 mb-4";
+  const iconClasses = "w-5 h-5";
+  const textClasses = "text-white/50";
+  const informationClasses = "flex items-center gap-3 mb-4";
 
   return (
     <section className="container mb-12 flex flex-col lg:flex-row gap-3 px-12 sm:px-0" id="contact">
@@ -26,7 +26,7 @@ const Contact = () => {
         </div>
         <div className={informationClasses}>
           <EnvelopeIcon className={iconClasses} />
-          <p className={textClasses}><a href="mailto:amczg@biuro.pl"></a>amczg@biuro.pl</p>
+          <p className={textClasses}><a href="mailto:biuro@amczg.pl"></a>biuro@amczg.pl</p>
         </div>
         <div className={informationClasses}>
           <ClockIcon className={iconClasses} />

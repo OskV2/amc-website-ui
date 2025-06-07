@@ -12,8 +12,8 @@ const Navbar = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
-  const linkClasses: string = "text-neutral-300 hover:text-amber-100";
-  const iconClasses: string = "w-10 h-10";
+  const linkClasses = "text-neutral-300 hover:text-amber-100";
+  const iconClasses = "w-10 h-10";
 
   const controlNavbar = () => {
     if (window.scrollY > lastScrollY) {

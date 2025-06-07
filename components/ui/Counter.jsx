@@ -1,13 +1,8 @@
 import { animate } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 
-interface CounterProps {
-  from: number;
-  to: number;
-}
-
-const Counter: React.FC<CounterProps> = ({ from, to }) => {
-    const nodeRef = useRef<HTMLSpanElement | null>(null);
+const Counter= ({ from, to }) => {
+    const nodeRef = useRef(null);
 
     useEffect(() => {
       const node = nodeRef.current;

@@ -3,12 +3,7 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { Options } from "@splidejs/splide";
 import "@splidejs/react-splide/css";
 
-type GalleryProps = {
-  images: string[];
-  className?: string;
-};
-
-const splideOptionsDesktop: Options = {
+const splideOptionsDesktop = {
   type: "loop",
   perPage: 1,
   perMove: 1,
@@ -21,7 +16,7 @@ const splideOptionsDesktop: Options = {
   interval: 6000,
 };
 
-const splideOptionsMobile: Options = {
+const splideOptionsMobile = {
   type: "loop",
   perPage: 1,
   perMove: 1,
@@ -34,7 +29,7 @@ const splideOptionsMobile: Options = {
   interval: 6000,
 };
 
-const thumbsOptions: Options = {
+const thumbsOptions = {
   type: "slide",
   rewind: true,
   gap: "1rem",
@@ -47,9 +42,9 @@ const thumbsOptions: Options = {
   arrows: false,
 };
 
-const Gallery = ({ images, className }: GalleryProps) => {
-  const mainRef = useRef<Splide | null>(null);
-  const thumbsRef = useRef<Splide | null>(null);
+const Gallery = ({ images, className }) => {
+  const mainRef = useRef(null);
+  const thumbsRef = useRef(null);
 
   useEffect(() => {
     if (mainRef.current && thumbsRef.current) {

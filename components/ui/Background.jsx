@@ -1,11 +1,4 @@
-type BackgroundProps = {
-  className?: string | null;
-  src: string;
-  alt: string;
-  darkOverlay?: boolean | false;
-};
-
-const Background = ({ className, src, alt, darkOverlay }: BackgroundProps) => {
+const Background = ({ className, src, alt, darkOverlay }) => {
   return (
     <>
       {darkOverlay && (

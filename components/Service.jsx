@@ -5,20 +5,12 @@ import ChevronRight from "../public/chevron_right.svg";
 import Modal from "./ui/Modal"
 import EngineIcon2 from "../public/engine.svg"
 
-type ServiceProps = {
-  image: ReactElement;
-  name: string;
-  title: string;
-  description?: string
-  jsxContent?: ReactNode;
-};
-
 /*
 * TODO: 
 * - svg images should be thiccer
 */
 
-const Service = ({ image, name, description, jsxContent }: ServiceProps) => {
+const Service = ({ image, name, description, jsxContent }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleClick = () => {

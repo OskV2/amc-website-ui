@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { H2 } from "./ui/Typography";
-import Modal from "./ui/Modal";
-import BeforeAfter from "./ui/BeforeAfter";
-import Gallery from "./ui/Gallery";
+import { H2 } from "./ui/Typography.jsx";
+import Modal from "./ui/Modal.jsx";
+import BeforeAfter from "./ui/BeforeAfter.jsx";
+import Gallery from "./ui/Gallery.jsx";
 
 const Audi_Before = {
   imageUrl: "/audi_after.jpg",

@@ -1,8 +1,7 @@
-import React, { ReactElement, ReactNode } from "react";
 import Service from "./Service";
 import Image from "next/image";
 import Link from "next/link";
-import { H2 } from "../components/ui/Typography";
+import { H2 } from "./ui/Typography";
 
 import ScrewdriverAndWrenchIcon from "../public/screwdriver-wrench.svg";
 import EngineIcon from "../public/engine.svg";
@@ -12,19 +11,10 @@ import SuspensionIcon from "../public/suspension.svg";
 import BatteryIcon from "../public/battery.svg";
 import OilIcon from "../public/oil.svg";
 
+const serviceIconClasses = "service-icon aspect-square"
+const listClasses = "max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 mb-5"
 
-type ServiceType = {
-  id: number;
-  image: ReactElement;
-  name: string;
-  description?: string
-  jsxContent?: ReactNode;
-};
-
-const serviceIconClasses: string = "service-icon aspect-square"
-const listClasses: string = "max-w-md space-y-1 text-gray-500 list-disc list-inside dark:text-gray-400 mb-5"
-
-const services: ServiceType[] = [
+const services = [
   {
     id: 1,
     image: <EngineIcon className={serviceIconClasses} />,
@@ -181,7 +171,7 @@ const Services = () => {
         </H2>
         
       <div className=" grid grid-cols-1 min-[520px]:grid-cols-2 sm:grid-cols-3 xl:grid-cols-6 gap-3 mb-8">
-        {services.map((service: ServiceType) => (
+        {services.map((service) => (
           <Service
             key={service.id}
             image={service.image}

@@ -11,22 +11,12 @@ import SinglePostError from "./instagram/SinglePostError";
 
 import InstagramIcon from "../public/Instagram_color.svg";
 
-type InstagramPostType = {
-  id: string;
-  caption: string;
-  media_url: string;
-  permalink: string;
-  media_type: string;
-  thumbnail_url: string;
-  timestamp: Date;
-};
-
 /*
  * TODO:
  * - add href to link to instagram account
  */
 
-const SocialMedia: React.FC = () => {
+const SocialMedia= () => {
   let content;
 
   const { data, isLoading, isError } = useQuery({
@@ -70,7 +60,7 @@ const SocialMedia: React.FC = () => {
   if (data) {
     content = (
       <>
-        {data.map((post: InstagramPostType) => (
+        {data.map((post) => (
           <SinglePost key={post.id} postData={post} />
         ))}
       </>

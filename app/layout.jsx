@@ -1,16 +1,15 @@
-import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Navbar from '../components/Navbar'
+import Footer from "../components/Footer";
 
 const poppins = Poppins({ 
   weight: '400',
   subsets: ["latin"] 
 });
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "AMC - Auto Moto Centrum",
   description: "AMC - Auto Moto Centrum Zielona Góra",
 };
@@ -21,7 +20,7 @@ export const metadata: Metadata = {
 * - work on SEO
 */
 
-const RootLayout = ({children}: Readonly<{ children: React.ReactNode}>) => {
+const RootLayout = ({children}) => {
   return (
     <html className="scroll-smooth" lang="en">
       <body className={poppins.className}>

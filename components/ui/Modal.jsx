@@ -7,15 +7,7 @@ import {
   DialogTitle,
 } from "@headlessui/react";
 
-type ModalProps = {
-  isOpen: boolean;
-  onClose: () => void;
-  title: string; 
-  description?: string;
-  jsxContent?: ReactNode;
-};
-
-const Modal = ({ isOpen, onClose, title, description, jsxContent }: ModalProps) => {
+const Modal = ({ isOpen, onClose, title, description, jsxContent }) => {
   return (
     <Dialog
       open={isOpen}
