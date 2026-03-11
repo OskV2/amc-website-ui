@@ -1,7 +1,5 @@
 import { useState } from "react";
-import { H2 } from "./ui/Typography";
 import Modal from "./ui/Modal";
-import BeforeAfter from "./ui/BeforeAfter";
 import Gallery from "./ui/Gallery";
 
 const Restoration = ({ data }) => {
@@ -9,34 +7,32 @@ const Restoration = ({ data }) => {
 
   if (!data) return null;
 
-  const beforeAfterDesktop = {
-    first: { imageUrl: data.before_after.before_image_mobile },
-    second: { imageUrl: data.before_after.after_image_mobile },
-  };
-
   return (
     <>
-      <section className="container mb-12 px-12 sm:px-0" id="restoration">
-        <H2>Renowacja pojazdów</H2>
-        <p className="text-white/50 my-4">
-          {data.short_description}{" "}
-          <span
-            className="cursor-pointer text-white hover:text-amber-100"
-            onClick={() => setIsModalOpen(true)}
-          >
-            Dowiedz się więcej.
-          </span>
-        </p>
-        <div className="flex flex-col lg:flex-row gap-3">
-          <div className="w-full lg:w-1/2 h-fit">
-            <BeforeAfter
-              firstImage={beforeAfterDesktop.first}
-              secondImage={beforeAfterDesktop.second}
-            />
-          </div>
-          <div className="w-full lg:w-1/2 h-fit">
-            <Gallery images={data.gallery_images} />
-          </div>
+      <section className="py-24 border-t border-zinc-800/40" id="restoration">
+        {/* Header — contained */}
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 mb-12">
+          <p className="text-sm tracking-[0.3em] uppercase text-amber-400/70 mb-3">
+            Przywracamy do życia
+          </p>
+          <h2 className="text-3xl lg:text-5xl font-bold tracking-tight mb-4">
+            Renowacja pojazdów
+          </h2>
+          <div className="w-16 h-0.5 bg-amber-400/30 mb-6" />
+          <p className="text-zinc-400 max-w-xl leading-relaxed">
+            {data.short_description}{" "}
+            <button
+              className="text-amber-400/80 hover:text-amber-300 transition-colors underline underline-offset-4 decoration-amber-400/30"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Dowiedz się więcej
+            </button>
+          </p>
+        </div>
+
+        {/* Gallery — fullwidth */}
+        <div className="w-full">
+          <Gallery images={data.gallery_images} />
         </div>
       </section>
 
