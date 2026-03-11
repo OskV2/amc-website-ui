@@ -1,21 +1,22 @@
 import Counter from "./ui/Counter";
 
-const About = ({ yearsOnMarket = 25 }) => {
+const About = ({ yearsOnMarket = 25, heroImage = "/images/r107.jpg", heroImagePosition = "center 30%" }) => {
   return (
     <section className="relative w-full h-screen min-h-[600px] flex items-center" id="about">
       {/* Background image */}
       <img
         className="absolute inset-0 w-full h-full object-cover"
-        src="/images/r107.jpg"
+        src={heroImage}
         alt="Mercedes Benz R107 SLC"
+        style={{ objectPosition: heroImagePosition }}
       />
 
       {/* Gradient overlays */}
-      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/80 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-zinc-950 via-zinc-950/50 to-transparent" />
       <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-zinc-950/30" />
 
       {/* Content */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 w-full">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="max-w-2xl">
           {/* Gold accent line */}
           <div className="w-12 h-0.5 bg-amber-400 mb-8" />

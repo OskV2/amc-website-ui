@@ -1,7 +1,7 @@
 const Footer = ({ githubProfile }) => {
   return (
     <footer className="border-t border-zinc-800/40 py-8">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <img src="/images/amc_white.svg" alt="AMC" className="w-20 opacity-40" />
           <span className="text-xs text-zinc-600">

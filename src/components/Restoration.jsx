@@ -11,7 +11,7 @@ const Restoration = ({ data }) => {
     <>
       <section className="py-24 border-t border-zinc-800/40" id="restoration">
         {/* Header — contained */}
-        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 mb-12">
+        <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 mb-12">
           <p className="text-sm tracking-[0.3em] uppercase text-amber-400/70 mb-3">
             Przywracamy do życia
           </p>

@@ -40,7 +40,7 @@ const features = [
 const WhyUs = () => {
   return (
     <section className="py-24 border-t border-zinc-800/40">
-      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16">
+      <div className="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         {/* Section header */}
         <div className="mb-16 text-center">
           <p className="text-sm tracking-[0.3em] uppercase text-amber-400/70 mb-3">

@@ -28,7 +28,7 @@ const Navbar = () => {
   }, [isOpen]);
 
   const linkClasses =
-    "text-sm tracking-widest uppercase text-zinc-400 hover:text-amber-300 transition-colors duration-300";
+    "text-sm tracking-widest uppercase hover:text-amber-400 transition-colors duration-300";
 
   const navLinks = [
     { label: "Usługi", href: "#services" },
@@ -46,7 +46,7 @@ const Navbar = () => {
           (show ? "translate-y-0" : "-translate-y-full")
         }
       >
-        <nav className="max-w-6xl mx-auto px-12 py-5 flex justify-between items-center">
+        <nav className="max-w-7xl mx-auto px-12 py-5 flex justify-between items-center">
           <a href="/" className="group">
             <img
               src="/images/amc_white.svg"

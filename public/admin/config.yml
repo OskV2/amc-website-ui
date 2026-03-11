@@ -1,5 +1,5 @@
-# Development:
-local_backend: true
+# Odkomentuj na development:
+# local_backend: true
 
 backend:
   name: github
@@ -28,6 +28,8 @@ collections:
           - { label: "Profil Instagram (URL)", name: "instagram_profile", widget: "string", required: false }
           - { label: "Profil GitHub (URL)", name: "github_profile", widget: "string", required: false }
           - { label: "Lat na rynku", name: "years_on_market", widget: "number", value_type: "int" }
+          - { label: "Zdjęcie hero", name: "hero_image", widget: "image", required: false }
+          - { label: "Pozycja zdjęcia hero", name: "hero_image_position", widget: "select", required: false, options: ["center top", "center 20%", "center 30%", "center center", "center 70%", "center 80%", "center bottom", "left center", "right center"], default: "center 30%" }
 
   # ── Usługi ──
   - name: "services"

@@ -14,6 +14,8 @@ const settings = defineCollection({
     instagram_profile: z.string().optional(),
     github_profile: z.string().optional(),
     years_on_market: z.number().optional(),
+    hero_image: z.string().optional(),
+    hero_image_position: z.string().optional(),
   }),
 });
 

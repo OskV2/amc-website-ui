@@ -1,8 +1,17 @@
 import { useState } from "react";
 import Modal from "./ui/Modal";
 
+// Stonowany złoty/amber — domyślny stan ikony
+const ICON_FILTER_DEFAULT =
+  "brightness(0) invert(0.7) sepia(1) saturate(1.0) hue-rotate(10deg)";
+
+// Jaśniejszy, bardziej nasycony złoty — na hover
+const ICON_FILTER_HOVER =
+  "brightness(0) invert(0.7) sepia(1) saturate(2) hue-rotate(15deg)";
+
 const Service = ({ icon, name, items }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const modalContent = (
     <div className="space-y-4">
@@ -31,6 +40,8 @@ const Service = ({ icon, name, items }) => {
       <button
         className="group text-left rounded-xl bg-zinc-900/80 border border-zinc-800/50 hover:border-amber-400/30 transition-all duration-300 overflow-hidden"
         onClick={() => setIsModalOpen(true)}
+        onMouseEnter={() => setIsHovered(true)}
+        onMouseLeave={() => setIsHovered(false)}
       >
         {/* Icon area */}
         <div className="aspect-square p-6 flex items-center justify-center">
@@ -38,7 +49,8 @@ const Service = ({ icon, name, items }) => {
             <img
               src={icon}
               alt={name}
-              className="w-full h-full opacity-70 group-hover:opacity-100 transition-opacity duration-300"
+              className="w-full h-full transition-all duration-300"
+              style={{ filter: isHovered ? ICON_FILTER_HOVER : ICON_FILTER_DEFAULT }}
             />
           </div>
         </div>
