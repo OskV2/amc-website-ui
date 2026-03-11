@@ -1,0 +1,76 @@
+# Development:
+local_backend: true
+
+backend:
+  name: github
+  repo: TWOJ_USERNAME/TWOJ_REPO   # ← Zamień na swoje repo
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  # ── Ustawienia globalne ──
+  - name: "settings"
+    label: "Ustawienia strony"
+    files:
+      - label: "Ogólne"
+        name: "general"
+        file: "src/content/settings/general.json"
+        fields:
+          - { label: "Nazwa firmy", name: "site_name", widget: "string" }
+          - { label: "Opis (SEO)", name: "tagline", widget: "string" }
+          - { label: "Telefon", name: "phone", widget: "string", required: false }
+          - { label: "Email", name: "email", widget: "string", required: false }
+          - { label: "Adres", name: "address", widget: "string", required: false }
+          - { label: "Godziny otwarcia", name: "hours", widget: "string", required: false }
+          - { label: "URL mapy Google (embed)", name: "maps_embed_url", widget: "string", required: false }
+          - { label: "Profil Instagram (URL)", name: "instagram_profile", widget: "string", required: false }
+          - { label: "Profil GitHub (URL)", name: "github_profile", widget: "string", required: false }
+          - { label: "Lat na rynku", name: "years_on_market", widget: "number", value_type: "int" }
+
+  # ── Usługi ──
+  - name: "services"
+    label: "Usługi"
+    files:
+      - label: "Lista usług"
+        name: "services"
+        file: "src/content/services/services.json"
+        fields:
+          - label: "Usługi"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number", value_type: "int" }
+              - { label: "Nazwa", name: "name", widget: "string" }
+              - { label: "Ikona (ścieżka SVG)", name: "icon", widget: "string" }
+              - label: "Grupy usług"
+                name: "items"
+                widget: "list"
+                fields:
+                  - { label: "Podtytuł", name: "subtitle", widget: "string", required: false }
+                  - { label: "Lista", name: "list", widget: "list", field: { label: "Pozycja", name: "item", widget: "string" } }
+
+  # ── Renowacja ──
+  - name: "restoration"
+    label: "Renowacja"
+    files:
+      - label: "Sekcja renowacji"
+        name: "restoration"
+        file: "src/content/restoration/restoration.json"
+        fields:
+          - { label: "Tytuł", name: "title", widget: "string" }
+          - { label: "Krótki opis", name: "short_description", widget: "text" }
+          - { label: "Pełny opis", name: "full_description", widget: "text" }
+          - label: "Before/After"
+            name: "before_after"
+            widget: "object"
+            fields:
+              - { label: "Zdjęcie przed", name: "before_image", widget: "image" }
+              - { label: "Zdjęcie po", name: "after_image", widget: "image" }
+              - { label: "Zdjęcie przed (mobile)", name: "before_image_mobile", widget: "image" }
+              - { label: "Zdjęcie po (mobile)", name: "after_image_mobile", widget: "image" }
+          - label: "Galeria"
+            name: "gallery_images"
+            widget: "list"
+            field: { label: "Zdjęcie", name: "image", widget: "image" }

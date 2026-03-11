@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://amczg.pl/sitemap-index.xml
