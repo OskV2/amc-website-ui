@@ -1,6 +1,9 @@
 import Counter from "./ui/Counter";
 
-const About = ({ yearsOnMarket = 25, heroImage = "/images/r107.jpg", heroImagePosition = "center 30%" }) => {
+const About = ({ heroImage = "/images/r107.jpg", heroImagePosition = "center 30%" }) => {
+
+  const yearsOnMarket = new Date().getFullYear() - 1999
+
   return (
     <section className="relative w-full h-screen min-h-[600px] flex items-center" id="about">
       {/* Background image */}
