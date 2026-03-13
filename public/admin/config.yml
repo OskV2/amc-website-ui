@@ -3,7 +3,7 @@
 
 backend:
   name: github
-  repo: TWOJ_USERNAME/TWOJ_REPO
+  repo: oskv2/amc-website-ui
   branch: main
 
 media_folder: "public/images"
