@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #d4a843;
+    --gold-light: #f0d68a;
+    --gold-dim: #a07d2e;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Outfit', sans-serif;
+  }
+
+  html {
+    scroll-padding-top: 5rem;
+  }
+
+  ::selection {
+    background-color: #d4a84340;
+    color: #f0d68a;
+  }
+}
+
+/* Scrollbar — poza @layer żeby Tailwind v4 nie zignorował */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #18181b;
+}
+::-webkit-scrollbar-thumb {
+  background: #52525b;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #71717a;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #52525b #18181b;
+}

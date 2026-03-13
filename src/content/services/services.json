@@ -1,0 +1,150 @@
+{
+  "services": [
+    {
+      "id": 1,
+      "name": "Układ napędowy",
+      "icon": "/images/engine.svg",
+      "items": [
+        {
+          "list": [
+            "Wymiana sprzęgła",
+            "Naprawa lub wymiana skrzyni biegów",
+            "Wymiana półosi napędowych",
+            "Regeneracja lub wymiana wału napędowego",
+            "Naprawa lub wymiana mostu napędowego",
+            "Wymiana oleju w skrzyni biegów",
+            "Wymiana elementów układu różnicowego",
+            "Naprawa układu przeniesienia napędu",
+            "Wymiana łożysk w układzie napędowym",
+            "Wymiana uszczelnień w układzie napędowym",
+            "Regeneracja mechanicznego układu paliwowego",
+            "Itp."
+          ]
+        },
+        {
+          "subtitle": "Usługi związane z silnikiem",
+          "list": [
+            "Wymiana silnika",
+            "Naprawa mechaniczna silnika",
+            "Regeneracja głowicy silnika",
+            "Wymiana rozrządu",
+            "Wymiana uszczelki pod głowicą",
+            "Wymiana turbo (turbosprężarki)",
+            "Wymiana układu chłodzenia silnika",
+            "Naprawa lub wymiana układu wtryskowego",
+            "Wymiana pasków i łańcuchów napędowych",
+            "Regeneracja układu zapłonowego",
+            "Itp."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Układ hamulcowy",
+      "icon": "/images/brakes.svg",
+      "items": [
+        {
+          "list": [
+            "Wymiana klocków hamulcowych",
+            "Wymiana tarcz hamulcowych",
+            "Wymiana płynu hamulcowego",
+            "Naprawa zacisków hamulcowych",
+            "Wymiana przewodów hamulcowych",
+            "Wymiana bębnów i szczęk hamulcowych",
+            "Regeneracja systemu ABS",
+            "Wymiana pompy hamulcowej",
+            "Wymiana serwa hamulcowego",
+            "Itp."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Układ wydechowy",
+      "icon": "/images/exhaust.svg",
+      "items": [
+        {
+          "list": [
+            "Wymiana tłumika",
+            "Wymiana katalizatora",
+            "Uszczelnianie układu wydechowego",
+            "Spawanie elementów układu wydechowego",
+            "Montaż sportowego układu wydechowego",
+            "Wymiana lub naprawa kolektora wydechowego",
+            "Czyszczenie lub regeneracja filtra cząstek stałych (DPF/FAP)",
+            "Diagnostyka nieszczelności układu wydechowego",
+            "Montaż nowego tłumika końcowego",
+            "Usuwanie nadmiernych hałasów i wibracji w układzie wydechowym",
+            "Itp."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Zawieszenie",
+      "icon": "/images/suspension.svg",
+      "items": [
+        {
+          "list": [
+            "Wymiana amortyzatorów",
+            "Regeneracja amortyzatorów",
+            "Wymiana sprężyn zawieszenia",
+            "Naprawa wahaczy",
+            "Wymiana łożysk kół",
+            "Wymiana sworzni wahaczy",
+            "Naprawa tulei zawieszenia",
+            "Ustawianie geometrii kół (zbieżność)",
+            "Wymiana drążków kierowniczych i końcówek",
+            "Itp."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Układ elektryczny",
+      "icon": "/images/battery.svg",
+      "items": [
+        {
+          "list": [
+            "Diagnostyka komputerowa",
+            "Wymiana akumulatora",
+            "Naprawa alternatora",
+            "Naprawa rozrusznika",
+            "Wymiana świec zapłonowych/żarowych",
+            "Naprawa instalacji elektrycznej",
+            "Montaż/wymiana czujników",
+            "Naprawa/wymiana wiązek elektrycznych",
+            "Wymiana bezpieczników i przekaźników",
+            "Naprawa oświetlenia",
+            "Regeneracja/wymiana modułów sterujących",
+            "Montaż systemów alarmowych i immobilizerów",
+            "Naprawa centralnego zamka",
+            "Kalibracja czujników i systemów wspomagających",
+            "Instalacja dodatkowego wyposażenia elektrycznego",
+            "Itp."
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Inne",
+      "icon": "/images/oil.svg",
+      "items": [
+        {
+          "list": [
+            "Chip tuning",
+            "Naprawa liczników",
+            "Programowanie kluczyków",
+            "Rozkodowywanie radia",
+            "Itp."
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getEntry } from "astro:content";
+
+// Pobierz dane z każdej kolekcji
+const heroData = await getEntry("hero", "hero");
+const servicesData = await getEntry("services", "services");
+const restorationData = await getEntry("restoration", "restoration");
+const whyusData = await getEntry("whyus", "whyus");
+const ctaData = await getEntry("cta", "cta");
+const contactData = await getEntry("contact", "contact");
+
+import Navbar from "../components/Navbar.jsx";
+import About from "../components/About.jsx";
+import Services from "../components/Services.jsx";
+import Restoration from "../components/Restoration.jsx";
+import WhyUs from "../components/WhyUs.jsx";
+import Contact from "../components/Contact.jsx";
+import Footer from "../components/Footer.jsx";
+---
+
+<BaseLayout
+  title={heroData.data.site_name}
+  description={heroData.data.tagline}
+  contact={contactData.data}
+>
+  <Navbar client:load />
+
+  <main class="flex min-h-screen flex-col">
+    <About
+      client:load
+      heroImage={heroData.data.hero_image}
+      heroImagePosition={heroData.data.hero_image_position}
+    />
+    <Services
+      client:load
+      services={servicesData.data.services}
+    />
+    <Restoration
+      client:load
+      data={restorationData.data}
+    />
+    <WhyUs
+      client:visible
+      data={whyusData.data}
+    />
+
+    <!-- CTA band -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-amber-400/10 to-amber-400/5" />
+      <div class="w-full max-w-7xl mx-auto px-6 sm:px-8 lg:px-16 relative text-center">
+        <h2
+          class="text-2xl lg:text-4xl font-bold mb-4 tracking-tight"
+          style="font-family: 'Outfit', sans-serif;"
+        >
+          {ctaData.data.heading}
+        </h2>
+        <p class="text-zinc-400 mb-8 max-w-lg mx-auto">
+          {ctaData.data.description}
+        </p>
+        <a
+          href={ctaData.data.button_link}
+          class="inline-flex items-center gap-3 px-8 py-3.5 bg-amber-400 text-zinc-950 font-semibold rounded-full text-sm tracking-wide hover:bg-amber-300 transition-colors duration-300"
+          style="font-family: 'Outfit', sans-serif;"
+        >
+          {ctaData.data.button_text}
+          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <Contact
+      client:idle
+      settings={contactData.data}
+    />
+  </main>
+
+  <Footer client:visible githubProfile={contactData.data.github_profile} />
+</BaseLayout>

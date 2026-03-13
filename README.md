@@ -1,2 +1,2 @@
-# amc-website-ui
-Repository with UI for amczg.pl 
+# AMC — Auto Moto Centrum (Astro)
+Migrated from Next.js to Astro
