@@ -1,0 +1,44 @@
+name: Build strony
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build i ZIP
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Pobierz kod
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Przygotuj Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+          cache: npm
+
+      - name: Zainstaluj zależności
+        run: npm ci
+
+      - name: Zbuduj stronę
+        run: npm run build
+
+      - name: Udostępnij build do pobrania jako ZIP
+        uses: actions/upload-artifact@v4
+        with:
+          name: amc-website-${{ github.event.pull_request.number || 'manual' }}-${{ github.run_number }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
