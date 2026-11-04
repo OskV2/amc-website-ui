@@ -71,7 +71,7 @@ const contact = defineCollection({
     email: z.string().optional(),
     address: z.string().optional(),
     hours: z.string().optional(),
-    maps_embed_url: z.string().optional(),
+    maps_url: z.string().url().optional(),
     github_profile: z.string().optional(),
   }),
 });
