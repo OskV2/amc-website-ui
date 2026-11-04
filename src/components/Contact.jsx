@@ -42,9 +42,9 @@ const Contact = ({ settings }) => {
           <div className="w-16 h-0.5 bg-amber-400/30" />
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
+        <div>
           {/* Contact info */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {contactItems.map((item, index) => (
               <div key={index} className="flex items-start gap-4">
                 <div className="w-10 h-10 rounded-lg bg-amber-400/5 border border-amber-400/10 flex items-center justify-center shrink-0">
@@ -69,19 +69,17 @@ const Contact = ({ settings }) => {
             ))}
           </div>
 
-          {/* Map */}
-          {settings.maps_embed_url && (
-            <div className="lg:col-span-3 rounded-xl overflow-hidden border border-zinc-800/40 h-80 lg:h-auto min-h-[320px]">
-              <iframe
-                className="w-full h-full"
-                src={settings.maps_embed_url}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Lokalizacja warsztatu"
-                style={{ filter: "invert(0.9) hue-rotate(180deg) brightness(0.8) contrast(1.1)" }}
-              />
-            </div>
+          {settings.maps_url && (
+            <a
+              href={settings.maps_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center justify-center gap-3 rounded-lg border border-amber-400/30 bg-amber-400/10 px-6 py-3 font-medium text-amber-300 transition-colors hover:bg-amber-400/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-amber-400"
+            >
+              Otwórz w Mapach Google
+              <span aria-hidden="true">↗</span>
+              <span className="sr-only">(otwiera się w nowej karcie)</span>
+            </a>
           )}
         </div>
       </div>
