@@ -24,7 +24,10 @@ const Contact = ({ settings }) => {
       icon: "/images/location.svg",
       label: "Adres",
       value: settings.address,
-      href: null,
+      href: settings.maps_url || (settings.address
+        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(settings.address)}`
+        : null),
+      external: true,
     },
   ].filter((item) => item.value);
 
@@ -57,9 +60,14 @@ const Contact = ({ settings }) => {
                   {item.href ? (
                     <a
                       href={item.href}
+                      target={item.external ? "_blank" : undefined}
+                      rel={item.external ? "noopener noreferrer" : undefined}
                       className="text-zinc-200 hover:text-amber-300 transition-colors"
                     >
                       {item.value}
+                      {item.external && (
+                        <span className="sr-only"> (otwiera się w nowej karcie)</span>
+                      )}
                     </a>
                   ) : (
                     <p className="text-zinc-200">{item.value}</p>
